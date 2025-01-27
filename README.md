@@ -33,3 +33,7 @@ npm run build
 ```sh
 npm run lint
 ```
+
+### How to deploy to production (github pages)
+
+Just push changes to the main branch. Github Actions will take care of the deployment.
