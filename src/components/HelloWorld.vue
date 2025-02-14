@@ -1,4 +1,53 @@
 <script setup>
+import { ref } from "vue";
+
+const items = ref([
+    {
+        label: 'Home',
+        icon: 'pi pi-home'
+    },
+    {
+        label: 'Features',
+        icon: 'pi pi-star'
+    },
+    {
+        label: 'Projects',
+        icon: 'pi pi-search',
+        items: [
+            {
+                label: 'Components',
+                icon: 'pi pi-bolt'
+            },
+            {
+                label: 'Blocks',
+                icon: 'pi pi-server'
+            },
+            {
+                label: 'UI Kit',
+                icon: 'pi pi-pencil'
+            },
+            {
+                label: 'Templates',
+                icon: 'pi pi-palette',
+                items: [
+                    {
+                        label: 'Apollo',
+                        icon: 'pi pi-palette'
+                    },
+                    {
+                        label: 'Ultima',
+                        icon: 'pi pi-palette'
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        label: 'Contact',
+        icon: 'pi pi-envelope'
+    }
+]);
+
 defineProps({
   msg: {
     type: String,
@@ -8,14 +57,11 @@ defineProps({
 </script>
 
 <template>
-  <div class="greetings">
+  <div class="header-wrapper">
     <h1 class="green">{{ msg }}</h1>
-    <h3>
-      You’ve successfully created a project with
-      <a href="https://vite.dev/" target="_blank" rel="noopener">Vite</a> +
-      <a href="https://vuejs.org/" target="_blank" rel="noopener">Vue 3</a>.
-    </h3>
-    <Button class="form-button p-button-sm" label="Button">HELLO WORLD</Button>
+    <div class="card">
+        <Menubar :model="items" />
+    </div>
   </div>
 </template>
 
@@ -31,15 +77,10 @@ h3 {
   font-size: 1.2rem;
 }
 
-.greetings h1,
-.greetings h3 {
-  text-align: center;
-}
 
 @media (min-width: 1024px) {
-  .greetings h1,
-  .greetings h3 {
-    text-align: left;
+  .header-wrapper {
+    display: flex;
   }
 }
 </style>
