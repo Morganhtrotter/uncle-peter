@@ -1,50 +1,14 @@
 @import './base.css';
 
-body {
-  background-color: #F8F7FF;
-}
-
-header .wrapper, main, #app .headerTitle {
+#app {
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
   font-weight: normal;
 }
 
-header {
-  position: sticky;
-  top: 0;
-  z-index: 10;
-  box-shadow: 0 7px 5px -5px rgba(0,0,0,.2);
-}
-
-#app .titleWrapper {
-  background-color: #00171f;
-}
-
-#app .titleWrapper .headerTitle {
-  padding-top: 120px;
-  font-family: "Oswald", serif;
-  font-weight: 500;
-  font-size: 60px;
-  font-style: normal;
-  letter-spacing: 1px;
-  color: #EF8354;
-}
-
-#app .titleWrapper .headerTitle span {
-  font-weight: 300;
-  color: #587B7F;
-}
-header {
-  background-color: #00171f;
-}
-
-menubar.background {
-  color: blue;
-}
-
-a {
+a,
+.green {
   text-decoration: none;
   color: hsla(160, 100%, 37%, 1);
   transition: 0.4s;
@@ -58,5 +22,14 @@ a {
 }
 
 @media (min-width: 1024px) {
+  body {
+    display: flex;
+    place-items: center;
+  }
 
+  #app {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 0 2rem;
+  }
 }
