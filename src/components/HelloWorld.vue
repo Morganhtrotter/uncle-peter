@@ -53,18 +53,10 @@ const items = ref([
         route: '/contact'
     }
 ]);
-
-defineProps({
-  msg: {
-    type: String,
-    required: true,
-  },
-})
 </script>
 
 <template>
   <div class="header-wrapper">
-    <h1 class="green">{{ msg }}</h1>
     <div class="card">
         <Menubar :model="items">
             <template #item="{ item, props, hasSubmenu }">

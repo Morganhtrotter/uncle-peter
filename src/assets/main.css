@@ -1,6 +1,10 @@
 @import './base.css';
 
-header .wrapper, main {
+body {
+  background-color: #F8F7FF;
+}
+
+header .wrapper, main, #app .headerTitle {
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
@@ -8,11 +12,39 @@ header .wrapper, main {
 }
 
 header {
-  background-color: #F5F4F2;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  box-shadow: 0 7px 5px -5px rgba(0,0,0,.2);
 }
 
-a,
-.green {
+#app .titleWrapper {
+  background-color: #00171f;
+}
+
+#app .titleWrapper .headerTitle {
+  padding-top: 120px;
+  font-family: "Oswald", serif;
+  font-weight: 500;
+  font-size: 60px;
+  font-style: normal;
+  letter-spacing: 1px;
+  color: #EF8354;
+}
+
+#app .titleWrapper .headerTitle span {
+  font-weight: 300;
+  color: #587B7F;
+}
+header {
+  background-color: #00171f;
+}
+
+menubar.background {
+  color: blue;
+}
+
+a {
   text-decoration: none;
   color: hsla(160, 100%, 37%, 1);
   transition: 0.4s;

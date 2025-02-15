@@ -4,9 +4,12 @@ import TheWelcome from './components/TheWelcome.vue'
 </script>
 
 <template>
+  <div class="titleWrapper">
+    <h1 class="green headerTitle">Peter <span>Paige</span></h1>
+  </div>
   <header>
     <div class="wrapper">
-      <HelloWorld msg="Peter Paige" />
+      <HelloWorld />
     </div>
   </header>
 
