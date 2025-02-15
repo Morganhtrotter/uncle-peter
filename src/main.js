@@ -7,9 +7,11 @@ import PrimeVue from 'primevue/config';
 import Aura from '@primevue/themes/aura';
 import Button from "primevue/button";
 import Menubar from 'primevue/menubar';
+import router from './router';
 
 const app = createApp(App);
 
+app.use(router);
 app.use(PrimeVue, {
     theme: {
         preset: Aura

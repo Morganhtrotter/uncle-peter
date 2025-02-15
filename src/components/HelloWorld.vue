@@ -61,6 +61,10 @@ defineProps({
     <h1 class="green">{{ msg }}</h1>
     <div class="card">
         <Menubar :model="items" />
+        <div id="nav">
+            <router-link to="/">Home</router-link> |
+            <router-link to="/about">About</router-link>
+        </div>
     </div>
   </div>
 </template>
