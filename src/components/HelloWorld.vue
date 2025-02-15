@@ -101,6 +101,7 @@ h3 {
 @media (min-width: 1024px) {
   .header-wrapper {
     display: flex;
+    flex-direction: column;
   }
 }
 </style>
