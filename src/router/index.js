@@ -20,8 +20,12 @@ const routes = [
     component: Contact,
   },
   {
+    path: '/:pathMatch(.*)',
+    redirect: "/",
+  },
+  {
     path: '/:pathMatch(.*)*',
-    redirect: '/',
+    redirect: "/",
   },
 ];
 
