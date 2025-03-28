@@ -1,7 +1,10 @@
 import { createWebHistory, createRouter } from "vue-router";
 import Home from "@/views/Home.vue";
 import About from "@/views/About.vue";
-import Contact from "@/views/Contact.vue"
+import Upcoming from "@/views/Upcoming.vue";
+import Actor from "@/views/Actor.vue";
+import Showrunner from "@/views/Showrunner.vue";
+import Director from "@/views/Director.vue";
 
 const routes = [
   {
@@ -12,12 +15,28 @@ const routes = [
   {
     path: "/about",
     name: "About",
+    
     component: About,
   },
   {
-    path: "/contact",
-    name: "Contact",
-    component: Contact,
+    path: "/director",
+    name: "Director",
+    component: Director,
+  },
+  {
+    path: "/showrunner",
+    name: "Showrunner",
+    component: Showrunner,
+  },
+  {
+    path: "/actor",
+    name: "Actor",
+    component: Actor,
+  },
+  {
+    path: "/upcoming-projects",
+    name: "Upcoming Projects",
+    component: Upcoming,
   },
   {
     path: '/:pathMatch(.*)',

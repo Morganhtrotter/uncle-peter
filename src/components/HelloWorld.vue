@@ -7,50 +7,27 @@ const router = useRouter();
 const items = ref([
     {
         label: 'Home',
-        icon: 'pi pi-home',
         route: '/'
     },
     {
+        label: 'Director',
+        route: '/director'
+    },
+    {
+        label: 'Showrunner',
+        route: '/showrunner'
+    },
+    {
+        label: 'Actor',
+        route: '/actor'
+    },
+    {
+        label: 'Upcoming Projects',
+        route: '/upcoming-projects'
+    },
+    {
         label: 'About',
-        icon: 'pi pi-star',
         route: '/about'
-    },
-    {
-        label: 'Projects',
-        icon: 'pi pi-search',
-        items: [
-            {
-                label: 'Components',
-                icon: 'pi pi-bolt'
-            },
-            {
-                label: 'Blocks',
-                icon: 'pi pi-server'
-            },
-            {
-                label: 'UI Kit',
-                icon: 'pi pi-pencil'
-            },
-            {
-                label: 'Templates',
-                icon: 'pi pi-palette',
-                items: [
-                    {
-                        label: 'Apollo',
-                        icon: 'pi pi-palette'
-                    },
-                    {
-                        label: 'Ultima',
-                        icon: 'pi pi-palette'
-                    }
-                ]
-            }
-        ]
-    },
-    {
-        label: 'Contact',
-        icon: 'pi pi-envelope',
-        route: '/contact'
     }
 ]);
 </script>
