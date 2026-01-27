@@ -2,6 +2,9 @@
 
 body {
   background-color: #F8F7FF;
+  h1, p {
+    color: #010101;
+  }
 }
 
 header .wrapper, main, #app .headerTitle {
