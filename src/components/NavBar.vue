@@ -22,6 +22,7 @@
   z-index: 20;
   background: var(--ground);
   border-bottom: 1px solid var(--hairline);
+  box-shadow: 0 4px 12px var(--shadow-color);
 }
 
 .nav-inner {

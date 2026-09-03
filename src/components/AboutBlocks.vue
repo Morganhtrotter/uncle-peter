@@ -2,15 +2,15 @@
 const blocks = [
   {
     role: 'Actor',
-    text: "Began his career as an actor, guest-starring across sitcoms and procedurals before landing a lead role in Showtime's QUEER AS FOLK.",
+    text: "Began his career as an actor, guest-starring across sitcoms and procedurals before landing a lead role in Showtime's Queer as Folk.",
   },
   {
     role: 'Writer / Director',
-    text: 'Co-created THE FOSTERS and GOOD TROUBLE, developed pilots for networks including ABC and Netflix, and has directed three features — SAY UNCLE, LEAVING BARSTOW, and THE THING ABOUT HARRY.',
+    text: 'Co-created The Fosters and Good Trouble, developed pilots for networks including ABC and Netflix, and has directed three features — Say Uncle, Leaving Barstow, and The Thing About Harry.',
   },
   {
     role: 'Showrunner',
-    text: "Co-showrunner for ABC/Shondaland's STATION 19 through its celebrated final season.",
+    text: "Co-showrunner for ABC/Shondaland's Station 19 through its celebrated final season.",
   },
 ];
 </script>

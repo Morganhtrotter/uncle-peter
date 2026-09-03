@@ -38,9 +38,8 @@
 
 .reel-frame {
   border: 1px solid var(--hairline-strong);
-  border-radius: var(--radius);
   padding: var(--sp-2);
-  background: var(--surface);
+  background: var(--ground);
   overflow: hidden;
 }
 
