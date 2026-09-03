@@ -25,6 +25,7 @@
   letter-spacing: 0.02em;
   padding: 0.9em 1.6em;
   border: 1px solid var(--ink);
+  border-radius: var(--radius);
   text-decoration: none;
   cursor: pointer;
   display: inline-flex;
@@ -35,7 +36,8 @@
   transition:
     background-color 0.15s ease,
     color 0.15s ease,
-    border-color 0.15s ease;
+    border-color 0.15s ease,
+    transform 0.15s ease;
 }
 
 .btn.primary {
@@ -47,9 +49,11 @@
 .btn.primary:hover {
   background: transparent;
   color: var(--accent);
+  transform: translateY(-1px);
 }
 
 .btn.ghost:hover {
-  border-color: var(--accent);
-  color: var(--accent);
+  border-color: var(--accent-2);
+  color: var(--accent-2);
+  transform: translateY(-1px);
 }

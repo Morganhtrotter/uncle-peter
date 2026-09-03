@@ -64,6 +64,6 @@ nav a {
 nav a:hover,
 nav a.router-link-active {
   color: var(--ink);
-  border-color: var(--accent);
+  border-color: var(--accent-2);
 }
 </style>

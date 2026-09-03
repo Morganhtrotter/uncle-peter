@@ -1,4 +1,4 @@
-/* Design tokens — "screening room" system. See design audit for rationale. */
+/* Design tokens — "screening room" system, muted and professional. */
 :root {
   --ground: #0a0a0c;
   --surface: #151517;
@@ -8,13 +8,17 @@
   --ink: #f3f1ec;
   --ink-muted: #9c9a94;
   --ink-faint: #68665f;
-  --accent: #c6883c;
+  --accent: #6f93bd;
   --accent-ink: #0a0a0c;
-  --accent-2: #5c7c82;
+  --accent-2: #c05a72;
+  --accent-3: #9ab077;
 
-  --font-display: 'Didot', 'Bodoni MT', 'Big Caslon', Georgia, 'Times New Roman', serif;
-  --font-body: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  --font-mono: 'SF Mono', 'JetBrains Mono', Menlo, Consolas, monospace;
+  --font-display: 'Fraunces', 'Big Caslon', Georgia, 'Times New Roman', serif;
+  --font-body: 'Plus Jakarta Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --font-mono: 'Space Mono', 'JetBrains Mono', Menlo, Consolas, monospace;
+
+  --radius: 14px;
+  --radius-sm: 8px;
 
   --sp-1: 0.25rem;
   --sp-2: 0.5rem;
@@ -40,9 +44,10 @@
     --ink: #151517;
     --ink-muted: #5b584e;
     --ink-faint: #8b887c;
-    --accent: #96601f;
+    --accent: #355e82;
     --accent-ink: #f8f5ee;
-    --accent-2: #38555a;
+    --accent-2: #8c2f45;
+    --accent-3: #4d6d35;
     color-scheme: light;
   }
 }
@@ -56,9 +61,10 @@
   --ink: #f3f1ec;
   --ink-muted: #9c9a94;
   --ink-faint: #68665f;
-  --accent: #c6883c;
+  --accent: #6f93bd;
   --accent-ink: #0a0a0c;
-  --accent-2: #5c7c82;
+  --accent-2: #c05a72;
+  --accent-3: #9ab077;
   color-scheme: dark;
 }
 
@@ -71,9 +77,10 @@
   --ink: #151517;
   --ink-muted: #5b584e;
   --ink-faint: #8b887c;
-  --accent: #96601f;
+  --accent: #355e82;
   --accent-ink: #f8f5ee;
-  --accent-2: #38555a;
+  --accent-2: #8c2f45;
+  --accent-3: #4d6d35;
   color-scheme: light;
 }
 

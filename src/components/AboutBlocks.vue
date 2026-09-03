@@ -66,7 +66,7 @@ const blocks = [
   font-size: 0.68rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--accent);
+  color: var(--accent-2);
   margin-bottom: var(--sp-3);
 }
 

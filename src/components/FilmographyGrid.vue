@@ -89,6 +89,8 @@ const films = [
 .film-card {
   border: 1px solid var(--hairline);
   background: var(--surface);
+  border-radius: var(--radius);
+  overflow: hidden;
 }
 
 .poster {
@@ -100,15 +102,15 @@ const films = [
 }
 
 .poster.p1 {
-  background: linear-gradient(155deg, var(--surface-2), var(--ground));
+  background: linear-gradient(155deg, color-mix(in srgb, var(--accent) 18%, transparent), var(--ground));
 }
 
 .poster.p2 {
-  background: linear-gradient(155deg, rgba(92, 124, 130, 0.16), var(--ground));
+  background: linear-gradient(155deg, color-mix(in srgb, var(--accent-2) 18%, transparent), var(--ground));
 }
 
 .poster.p3 {
-  background: linear-gradient(155deg, rgba(198, 136, 60, 0.16), var(--ground));
+  background: linear-gradient(155deg, color-mix(in srgb, var(--accent-3) 18%, transparent), var(--ground));
 }
 
 .poster-img {
@@ -148,6 +150,7 @@ const films = [
   align-items: center;
   gap: 0.4em;
   border: 1px solid var(--hairline-strong);
+  border-radius: var(--radius-sm);
   font-family: var(--font-mono);
   font-size: 0.68rem;
   padding: 0.35em 0.6em;
@@ -155,6 +158,6 @@ const films = [
 }
 
 .cert b {
-  color: var(--accent);
+  color: var(--accent-3);
 }
 </style>

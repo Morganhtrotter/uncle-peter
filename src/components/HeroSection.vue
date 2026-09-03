@@ -11,9 +11,9 @@
       <p class="eyebrow">Writer &middot; Director &middot; Showrunner</p>
       <h1 class="hero-name">Peter <span class="last">Paige</span></h1>
       <p class="hero-thesis">
-        From the acclaimed ensemble of <strong>QUEER AS FOLK</strong> to co-creating
-        <strong>THE FOSTERS</strong> and <strong>GOOD TROUBLE</strong>, and closing out
-        <strong>STATION 19</strong> as co-showrunner &mdash; stories built for network
+        From the acclaimed ensemble of <strong>Queer as Folk</strong> to co-creating
+        <strong>The Fosters</strong> and <strong>Good Trouble</strong>, and closing out
+        <strong>Station 19</strong> as co-showrunner &mdash; stories built for network
         audiences and critics alike.
       </p>
       <div class="hero-cta">
@@ -30,8 +30,8 @@
   overflow: hidden;
   padding-block: var(--sp-10) var(--sp-9);
   background:
-    radial-gradient(ellipse 70% 60% at 25% 15%, rgba(198, 136, 60, 0.1), transparent 60%),
-    radial-gradient(ellipse 60% 50% at 85% 85%, rgba(92, 124, 130, 0.1), transparent 60%),
+    radial-gradient(ellipse 70% 60% at 25% 15%, color-mix(in srgb, var(--accent) 16%, transparent), transparent 60%),
+    radial-gradient(ellipse 60% 50% at 85% 85%, color-mix(in srgb, var(--accent-2) 16%, transparent), transparent 60%),
     var(--ground);
 }
 
@@ -88,7 +88,7 @@
 }
 
 .hero-name .last {
-  color: var(--ink-muted);
+  color: var(--accent);
   font-style: italic;
 }
 

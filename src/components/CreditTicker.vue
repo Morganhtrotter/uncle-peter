@@ -32,7 +32,7 @@ const credits = ['Queer as Folk', 'The Fosters', 'Good Trouble', 'Station 19', '
   font-family: var(--font-display);
   font-style: italic;
   font-size: 1.1rem;
-  color: var(--ink-faint);
+  color: color-mix(in srgb, var(--accent-2) 65%, var(--ink-faint));
   letter-spacing: 0.03em;
 }
 </style>
