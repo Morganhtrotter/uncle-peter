@@ -1,53 +1,80 @@
-/* color palette from <https://github.com/vuejs/theme> */
+/* Design tokens — "screening room" system. See design audit for rationale. */
 :root {
-  --vt-c-white: #ffffff;
-  --vt-c-white-soft: #f8f8f8;
-  --vt-c-white-mute: #f2f2f2;
+  --ground: #0a0a0c;
+  --surface: #151517;
+  --surface-2: #1d1e21;
+  --hairline: rgba(243, 241, 236, 0.14);
+  --hairline-strong: rgba(243, 241, 236, 0.28);
+  --ink: #f3f1ec;
+  --ink-muted: #9c9a94;
+  --ink-faint: #68665f;
+  --accent: #c6883c;
+  --accent-ink: #0a0a0c;
+  --accent-2: #5c7c82;
 
-  --vt-c-black: #181818;
-  --vt-c-black-soft: #222222;
-  --vt-c-black-mute: #282828;
+  --font-display: 'Didot', 'Bodoni MT', 'Big Caslon', Georgia, 'Times New Roman', serif;
+  --font-body: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --font-mono: 'SF Mono', 'JetBrains Mono', Menlo, Consolas, monospace;
 
-  --vt-c-indigo: #2c3e50;
+  --sp-1: 0.25rem;
+  --sp-2: 0.5rem;
+  --sp-3: 0.75rem;
+  --sp-4: 1rem;
+  --sp-5: 1.5rem;
+  --sp-6: 2rem;
+  --sp-7: 3rem;
+  --sp-8: 4rem;
+  --sp-9: 6rem;
+  --sp-10: 8rem;
 
-  --vt-c-divider-light-1: rgba(60, 60, 60, 0.29);
-  --vt-c-divider-light-2: rgba(60, 60, 60, 0.12);
-  --vt-c-divider-dark-1: rgba(84, 84, 84, 0.65);
-  --vt-c-divider-dark-2: rgba(84, 84, 84, 0.48);
-
-  --vt-c-text-light-1: var(--vt-c-indigo);
-  --vt-c-text-light-2: rgba(60, 60, 60, 0.66);
-  --vt-c-text-dark-1: var(--vt-c-white);
-  --vt-c-text-dark-2: rgba(235, 235, 235, 0.64);
+  color-scheme: dark;
 }
 
-/* semantic color variables for this project */
-:root {
-  --color-background: var(--vt-c-white);
-  --color-background-soft: var(--vt-c-white-soft);
-  --color-background-mute: var(--vt-c-white-mute);
-
-  --color-border: var(--vt-c-divider-light-2);
-  --color-border-hover: var(--vt-c-divider-light-1);
-
-  --color-heading: var(--vt-c-text-light-1);
-  --color-text: var(--vt-c-text-light-1);
-
-  --section-gap: 160px;
-}
-
-@media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: light) {
   :root {
-    --color-background: var(--vt-c-black);
-    --color-background-soft: var(--vt-c-black-soft);
-    --color-background-mute: var(--vt-c-black-mute);
-
-    --color-border: var(--vt-c-divider-dark-2);
-    --color-border-hover: var(--vt-c-divider-dark-1);
-
-    --color-heading: var(--vt-c-text-dark-1);
-    --color-text: var(--vt-c-text-dark-2);
+    --ground: #f2efe8;
+    --surface: #ffffff;
+    --surface-2: #eae6da;
+    --hairline: rgba(10, 10, 12, 0.14);
+    --hairline-strong: rgba(10, 10, 12, 0.3);
+    --ink: #151517;
+    --ink-muted: #5b584e;
+    --ink-faint: #8b887c;
+    --accent: #96601f;
+    --accent-ink: #f8f5ee;
+    --accent-2: #38555a;
+    color-scheme: light;
   }
+}
+
+:root[data-theme='dark'] {
+  --ground: #0a0a0c;
+  --surface: #151517;
+  --surface-2: #1d1e21;
+  --hairline: rgba(243, 241, 236, 0.14);
+  --hairline-strong: rgba(243, 241, 236, 0.28);
+  --ink: #f3f1ec;
+  --ink-muted: #9c9a94;
+  --ink-faint: #68665f;
+  --accent: #c6883c;
+  --accent-ink: #0a0a0c;
+  --accent-2: #5c7c82;
+  color-scheme: dark;
+}
+
+:root[data-theme='light'] {
+  --ground: #f2efe8;
+  --surface: #ffffff;
+  --surface-2: #eae6da;
+  --hairline: rgba(10, 10, 12, 0.14);
+  --hairline-strong: rgba(10, 10, 12, 0.3);
+  --ink: #151517;
+  --ink-muted: #5b584e;
+  --ink-faint: #8b887c;
+  --accent: #96601f;
+  --accent-ink: #f8f5ee;
+  --accent-2: #38555a;
+  color-scheme: light;
 }
 
 *,
@@ -55,32 +82,56 @@
 *::after {
   box-sizing: border-box;
   margin: 0;
-  font-weight: normal;
+}
+
+html {
+  scroll-padding-top: 5rem;
 }
 
 body {
   min-height: 100vh;
-  color: var(--color-text);
-  background: var(--color-background);
-  transition:
-    color 0.5s,
-    background-color 0.5s;
+  background: var(--ground);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 16px;
   line-height: 1.6;
-  font-family:
-    Inter,
-    -apple-system,
-    BlinkMacSystemFont,
-    'Segoe UI',
-    Roboto,
-    Oxygen,
-    Ubuntu,
-    Cantarell,
-    'Fira Sans',
-    'Droid Sans',
-    'Helvetica Neue',
-    sans-serif;
-  font-size: 15px;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-display);
+  font-weight: 500;
+  text-wrap: balance;
+}
+
+a {
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+::selection {
+  background: var(--accent);
+  color: var(--accent-ink);
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
 }

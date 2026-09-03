@@ -1,9 +1,17 @@
 <script setup>
-import About from './About.vue'
+import HeroSection from '@/components/HeroSection.vue';
+import CreditTicker from '@/components/CreditTicker.vue';
+import ReelPlayer from '@/components/ReelPlayer.vue';
+import FilmographyGrid from '@/components/FilmographyGrid.vue';
+import AboutBlocks from '@/components/AboutBlocks.vue';
+import ContactSection from '@/components/ContactSection.vue';
 </script>
 
 <template>
-    <h1>Home Page</h1>
-    <p>PETER PAIGE began his career in Hollywood as an actor, guest starring in sitcoms and procedurals before eventually landing one of the leads in Showtime’s acclaimed hit QUEER AS FOLK. Since transitioning to writing/directing, Paige has co-created the long-running shows THE FOSTERS and GOOD TROUBLE, as well as pilots for everyone from ABC to Netflix. As a filmmaker, he has directed three features - SAY UNCLE, LEAVING BARSTOW, and THE THING ABOUT HARRY (which has a perfect 100% score on Rotten Tomatoes). He was co-showrunner for the ABC/Shondaland mega-hit STATION 19’s celebrated final season, and is attached to write/direct the film COVER/STORY (starring Nathan Lane and Bowen Yang) summer 2025.</p>
-    <About />
+  <HeroSection />
+  <CreditTicker />
+  <ReelPlayer />
+  <FilmographyGrid />
+  <AboutBlocks />
+  <ContactSection />
 </template>
