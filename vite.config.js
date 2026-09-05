@@ -10,7 +10,9 @@ export default defineConfig({
     vue(),
     vueDevTools(),
   ],
-  base: '/uncle-peter/',
+  // Served from the custom domain https://peterpaige.tv, so assets live at
+  // the root rather than under the /uncle-peter/ project-site subpath.
+  base: '/',
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url))
