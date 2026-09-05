@@ -5,16 +5,21 @@ const email = 'contact@peterpaige.com';
 
 <template>
   <section id="contact" class="contact">
-    <p class="eyebrow">Contact</p>
-    <h2>Let's Talk</h2>
-    <p class="lede">For directing, writing, or acting inquiries, reach out directly.</p>
-    <a class="btn primary" :href="`mailto:${email}`">{{ email }}</a>
+    <div class="contact-inner">
+      <p class="eyebrow">Contact</p>
+      <h2>Let's Talk</h2>
+      <p class="lede">For directing, writing, or acting inquiries, reach out directly.</p>
+      <a class="btn primary" :href="`mailto:${email}`">{{ email }}</a>
+    </div>
   </section>
 </template>
 
 <style scoped>
 .contact {
   border-top: 1px solid var(--hairline);
+}
+
+.contact-inner {
   max-width: 1180px;
   margin: 0 auto;
   padding: var(--sp-10) clamp(1.25rem, 4vw, 3rem);
