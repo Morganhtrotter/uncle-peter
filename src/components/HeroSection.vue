@@ -29,6 +29,7 @@
   position: relative;
   overflow: hidden;
   padding-block: var(--sp-10) var(--sp-9);
+  border-bottom: 1px solid var(--hairline-strong);
   background:
     radial-gradient(ellipse 70% 60% at 25% 15%, color-mix(in srgb, var(--accent) 16%, transparent), transparent 60%),
     radial-gradient(ellipse 60% 50% at 85% 85%, color-mix(in srgb, var(--accent-2) 16%, transparent), transparent 60%),
