@@ -1,6 +1,6 @@
 <script setup>
 // TODO: replace with the real contact / representation email before deploying.
-const email = 'contact@peterpaige.com';
+const email = 'EMAIL COMING SOON';
 </script>
 
 <template>
