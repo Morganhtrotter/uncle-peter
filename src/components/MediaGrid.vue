@@ -7,6 +7,7 @@ const props = defineProps({
   roleLabel: { type: String, required: true },
   items: { type: Array, required: true },
   showFlags: { type: Boolean, default: true },
+  tone: { type: String, default: 'accent' },
 });
 
 function cardBlurb(item) {
@@ -16,43 +17,76 @@ function cardBlurb(item) {
 </script>
 
 <template>
-  <section :id="sectionId" class="grid-section">
-    <div class="grid-head">
-      <div>
-        <p class="eyebrow">{{ eyebrow }}</p>
-        <h2>{{ heading }}</h2>
+  <section :id="sectionId" class="grid-section" :class="`tone-${tone}`">
+    <div class="grid-inner">
+      <div class="grid-head">
+        <div>
+          <p class="eyebrow">{{ eyebrow }}</p>
+          <h2>{{ heading }}</h2>
+        </div>
+        <span class="count">{{ count }}</span>
       </div>
-      <span class="count">{{ count }}</span>
-    </div>
-    <div class="film-grid">
-      <a
-        class="film-card"
-        v-for="item in items"
-        :key="item.title"
-        :href="item.imdb"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <div class="poster" :class="item.variant">
-          <img class="poster-img" :src="item.image" :alt="`${item.title} key art`" loading="lazy" />
-          <span v-if="showFlags && item.role" class="flag">{{ item.role }}</span>
-        </div>
-        <div class="film-meta">
-          <span class="role">{{ roleLabel }}</span>
-          <h3>{{ item.title }}</h3>
-          <p>{{ cardBlurb(item) }}</p>
-          <span v-if="item.cert" class="cert"><b>{{ item.cert }}</b> Rotten Tomatoes</span>
-        </div>
-      </a>
+      <div class="film-grid">
+        <a
+          class="film-card"
+          v-for="item in items"
+          :key="item.title"
+          :href="item.imdb"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <div class="poster">
+            <img class="poster-img" :src="item.image" :alt="`${item.title} key art`" loading="lazy" />
+            <span v-if="showFlags && item.role" class="flag">{{ item.role }}</span>
+          </div>
+          <div class="film-meta">
+            <span class="role">{{ roleLabel }}</span>
+            <h3>{{ item.title }}</h3>
+            <p>{{ cardBlurb(item) }}</p>
+            <span v-if="item.cert" class="cert"><b>{{ item.cert }}</b> Rotten Tomatoes</span>
+          </div>
+        </a>
+      </div>
     </div>
   </section>
 </template>
 
 <style scoped>
 .grid-section {
+  --card-tint: var(--accent);
+  padding-block: var(--sp-9);
+  background: var(--ground);
+}
+
+.grid-inner {
   max-width: 1180px;
   margin: 0 auto;
-  padding: var(--sp-9) clamp(1.25rem, 4vw, 3rem);
+  padding-inline: clamp(1.25rem, 4vw, 3rem);
+}
+
+.grid-section.tone-accent {
+  --card-tint: var(--accent);
+  background:
+    linear-gradient(
+      to bottom,
+      color-mix(in srgb, var(--accent) 7%, transparent) 0%,
+      transparent 40%,
+      transparent 70%,
+      color-mix(in srgb, var(--accent-2) 6%, transparent) 100%
+    ),
+    var(--ground);
+}
+
+.grid-section.tone-accent-2 {
+  --card-tint: var(--accent-2);
+  background:
+    linear-gradient(
+      to bottom,
+      color-mix(in srgb, var(--accent-2) 7%, transparent) 0%,
+      transparent 45%,
+      var(--ground) 100%
+    ),
+    var(--ground);
 }
 
 .grid-head {
@@ -110,18 +144,7 @@ function cardBlurb(item) {
   overflow: hidden;
   display: flex;
   align-items: flex-end;
-}
-
-.poster.p1 {
-  background: linear-gradient(155deg, color-mix(in srgb, var(--accent) 18%, transparent), var(--ground));
-}
-
-.poster.p2 {
-  background: linear-gradient(155deg, color-mix(in srgb, var(--accent-2) 18%, transparent), var(--ground));
-}
-
-.poster.p3 {
-  background: linear-gradient(155deg, color-mix(in srgb, var(--accent-3) 18%, transparent), var(--ground));
+  background: linear-gradient(155deg, color-mix(in srgb, var(--card-tint) 16%, transparent), var(--ground));
 }
 
 .poster-img {

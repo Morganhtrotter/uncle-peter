@@ -45,14 +45,14 @@ const posterUrl = (videoId) =>
 
 .reel-section.tint-accent {
   background:
-    radial-gradient(ellipse 60% 75% at 8% 0%, color-mix(in srgb, var(--accent) 16%, transparent), transparent 65%),
-    var(--surface);
+    radial-gradient(ellipse 70% 80% at 12% 0%, color-mix(in srgb, var(--accent) 15%, transparent), transparent 65%),
+    var(--reel-base);
 }
 
 .reel-section.tint-accent-2 {
   background:
-    radial-gradient(ellipse 60% 75% at 92% 100%, color-mix(in srgb, var(--accent-2) 16%, transparent), transparent 65%),
-    var(--surface);
+    radial-gradient(ellipse 70% 80% at 88% 100%, color-mix(in srgb, var(--accent-2) 15%, transparent), transparent 65%),
+    var(--reel-base);
 }
 
 .reel-inner {

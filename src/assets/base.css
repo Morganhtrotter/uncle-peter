@@ -13,6 +13,7 @@
   --accent-2: #c05a72;
   --accent-3: #9ab077;
   --shadow-color: rgba(255, 255, 255, 0.07);
+  --reel-base: var(--surface);
 
   --font-display: 'Fraunces', 'Big Caslon', Georgia, 'Times New Roman', serif;
   --font-body: 'Plus Jakarta Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
@@ -50,6 +51,7 @@
     --accent-2: #8c2f45;
     --accent-3: #4d6d35;
     --shadow-color: rgba(20, 16, 12, 0.16);
+    --reel-base: #F5F2ED;
     color-scheme: light;
   }
 }
@@ -68,6 +70,7 @@
   --accent-2: #c05a72;
   --accent-3: #9ab077;
   --shadow-color: rgba(255, 255, 255, 0.07);
+  --reel-base: var(--surface);
   color-scheme: dark;
 }
 
@@ -85,6 +88,7 @@
   --accent-2: #8c2f45;
   --accent-3: #4d6d35;
   --shadow-color: rgba(20, 16, 12, 0.16);
+  --reel-base: #F5F2ED;
   color-scheme: light;
 }
 

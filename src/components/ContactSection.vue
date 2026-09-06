@@ -16,7 +16,13 @@ const email = 'EMAIL COMING SOON';
 
 <style scoped>
 .contact {
+  position: relative;
+  overflow: hidden;
   border-top: 1px solid var(--hairline);
+  background:
+    radial-gradient(ellipse 70% 55% at 15% 100%, color-mix(in srgb, var(--accent) 10%, transparent), transparent 65%),
+    radial-gradient(ellipse 70% 55% at 85% 100%, color-mix(in srgb, var(--accent-2) 10%, transparent), transparent 65%),
+    var(--ground);
 }
 
 .contact-inner {
