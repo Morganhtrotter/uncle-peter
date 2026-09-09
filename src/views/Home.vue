@@ -33,19 +33,19 @@ const shows = [
 const films = [
   {
     title: 'Say Uncle',
-    blurb: "Feature directorial debut — a dark comedy about a small town's rush to judgment.",
+    blurb: "Award-winning feature directorial debut - a dark comedy about how quick we are to judge others, and how wrong we can be…",
     image: 'https://imagedelivery.net/3fTi4yOM-Nphm2pJb0KVPg/c2205934-81d1-4cee-d0e9-81df63dc0200/public',
     imdb: 'https://www.imdb.com/title/tt0401385/',
   },
   {
     title: 'Leaving Barstow',
-    blurb: 'A drama following a family confronting its past in a fading desert town.',
+    blurb: 'A drama following a young man as he struggles to embark on the next chapter of his life. Won six BEST FILM AWARDS at festivals around the country.',
     image: 'https://imagedelivery.net/3fTi4yOM-Nphm2pJb0KVPg/959b07f1-939a-4e19-3694-83fd16670a00/public',
     imdb: 'https://www.imdb.com/title/tt1093374/',
   },
   {
     title: 'The Thing About Harry',
-    blurb: 'A romantic comedy revisiting an old rivalry on a long car ride home.',
+    blurb: 'A romantic comedy about two young men, high school enemies, who find their way to friendship - and possibly something more. GLAAD AWARD nominee and has a perfect 100% on Rotten Tomatoes.',
     cert: '100%',
     image: 'https://imagedelivery.net/3fTi4yOM-Nphm2pJb0KVPg/c92d67e2-d74e-4774-417e-5e80ee295200/public',
     imdb: 'https://www.imdb.com/title/tt11324534/',
@@ -73,6 +73,15 @@ const films = [
     :items="shows"
     :show-flags="features.showRoleFlags"
   />
+  <MediaGrid
+    section-id="filmography"
+    eyebrow="Filmography"
+    heading="Director"
+    count="03 Features"
+    role-label="Feature Film"
+    tone="accent-2"
+    :items="films"
+  />
   <ReelPlayer
     section-id="acting-reel"
     eyebrow="Acting Reel"
@@ -80,15 +89,6 @@ const films = [
     video-id="007deea75c2b060d1e5488cb85cc5dc1"
     video-title="Peter Paige — Acting Reel"
     tint="accent-2"
-  />
-  <MediaGrid
-    section-id="filmography"
-    eyebrow="Filmography"
-    heading="Writer / Director"
-    count="03 Features"
-    role-label="Feature Film"
-    tone="accent-2"
-    :items="films"
   />
   <AboutBlocks />
   <ContactSection />

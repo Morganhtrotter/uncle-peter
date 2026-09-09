@@ -7,8 +7,14 @@ const year = new Date().getFullYear();
     <div class="footer-inner">
       <span class="wordmark">Peter Paige</span>
       <ul>
-        <li><router-link :to="{ path: '/', hash: '#reel' }">Reel</router-link></li>
-        <li><router-link :to="{ path: '/', hash: '#filmography' }">Filmography</router-link></li>
+        <li><router-link :to="{ path: '/', hash: '#reel' }">Directing Reel</router-link></li>
+        <li><router-link :to="{ path: '/', hash: '#television' }">Television</router-link></li>
+        <li>
+          <a href="https://www.imdb.com/name/nm0656739/?_ssoLoop=1" target="_blank" rel="noopener noreferrer"
+            >Filmography</a
+          >
+        </li>
+        <li><router-link :to="{ path: '/', hash: '#acting-reel' }">Acting Reel</router-link></li>
         <li><router-link :to="{ path: '/', hash: '#contact' }">Contact</router-link></li>
       </ul>
       <span class="copy">&copy; {{ year }}</span>
@@ -42,6 +48,7 @@ const year = new Date().getFullYear();
 ul {
   list-style: none;
   display: flex;
+  flex-wrap: wrap;
   gap: var(--sp-5);
   padding: 0;
 }

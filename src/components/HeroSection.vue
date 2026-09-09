@@ -11,15 +11,10 @@
       <p class="eyebrow">Writer &middot; Director &middot; Showrunner</p>
       <h1 class="hero-name">Peter <span class="last">Paige</span></h1>
       <p class="hero-thesis">
-        From the acclaimed ensemble of <strong>Queer as Folk</strong> to co-creating
-        <strong>The Fosters</strong> and <strong>Good Trouble</strong>, and closing out
-        <strong>Station 19</strong> as co-showrunner &mdash; stories built for network
-        audiences and critics alike.
+        From starring in Showtime's hit <strong>Queer as Folk</strong> to co-creating the
+        long running series <strong>The Fosters</strong> and <strong>Good Trouble</strong>, as well as co-showrunning Shondaland's Grey's Anatomy spin-off
+        <strong>Station 19</strong> &mdash; Peter tells stories built for network audiences and critics alike, stories that move the converstion forward.
       </p>
-      <div class="hero-cta">
-        <router-link class="btn primary" :to="{ path: '/', hash: '#reel' }">Watch the Reel</router-link>
-        <router-link class="btn ghost" :to="{ path: '/', hash: '#contact' }">Get in Touch</router-link>
-      </div>
     </div>
   </section>
 </template>
@@ -93,7 +88,7 @@
 }
 
 .hero-thesis {
-  max-width: 46ch;
+  max-width: 48ch;
   color: var(--ink-muted);
   font-size: 1.1rem;
   margin-top: var(--sp-6);
@@ -104,10 +99,4 @@
   font-weight: 600;
 }
 
-.hero-cta {
-  display: flex;
-  gap: var(--sp-4);
-  margin-top: var(--sp-7);
-  flex-wrap: wrap;
-}
 </style>

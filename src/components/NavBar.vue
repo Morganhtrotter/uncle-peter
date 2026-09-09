@@ -44,8 +44,17 @@ onUnmounted(() => window.removeEventListener('keydown', handleKeydown));
         <ul>
           <li><router-link :to="{ path: '/', hash: '#reel' }" @click="closeMenu">Directing Reel</router-link></li>
           <li><router-link :to="{ path: '/', hash: '#television' }" @click="closeMenu">Television</router-link></li>
+          <li>
+            <a
+              class="nav-external"
+              href="https://www.imdb.com/name/nm0656739/?_ssoLoop=1"
+              target="_blank"
+              rel="noopener noreferrer"
+              @click="closeMenu"
+              >Filmography</a
+            >
+          </li>
           <li><router-link :to="{ path: '/', hash: '#acting-reel' }" @click="closeMenu">Acting Reel</router-link></li>
-          <li><router-link :to="{ path: '/', hash: '#filmography' }" @click="closeMenu">Filmography</router-link></li>
           <li><router-link :to="{ path: '/', hash: '#contact' }" @click="closeMenu">Contact</router-link></li>
         </ul>
       </nav>
@@ -134,7 +143,8 @@ nav a {
 }
 
 nav a:hover,
-nav a.router-link-active {
+nav a.router-link-active,
+nav a.nav-external {
   color: var(--ink);
   border-color: var(--accent-2);
 }

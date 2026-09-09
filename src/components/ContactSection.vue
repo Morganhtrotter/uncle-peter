@@ -1,6 +1,6 @@
 <script setup>
 // TODO: replace with the real contact / representation email before deploying.
-const email = 'EMAIL COMING SOON';
+const email = 'JOkin@Anonymouscontent.com';
 </script>
 
 <template>
@@ -8,7 +8,7 @@ const email = 'EMAIL COMING SOON';
     <div class="contact-inner">
       <p class="eyebrow">Contact</p>
       <h2>Let's Talk</h2>
-      <p class="lede">For directing, writing, or acting inquiries, reach out directly.</p>
+      <p class="lede">Email JEFF OKIN at ANONYMOUS CONTENT.</p>
       <a class="btn primary" :href="`mailto:${email}`">{{ email }}</a>
     </div>
   </section>
