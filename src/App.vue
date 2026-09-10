@@ -1,12 +1,12 @@
 <script setup>
-import NavBar from './components/NavBar.vue';
-import AppFooter from './components/AppFooter.vue';
+import NavBar from './components/NavBar.vue'
+import AppFooter from './components/AppFooter.vue'
 </script>
 
 <template>
-  <NavBar />
-  <main>
-    <router-view />
-  </main>
-  <AppFooter />
+    <NavBar />
+    <main>
+        <router-view />
+    </main>
+    <AppFooter />
 </template>
