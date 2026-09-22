@@ -1,4 +1,6 @@
 <script setup>
+import { onBeforeUnmount, onMounted, ref } from 'vue'
+
 const props = defineProps({
     sectionId: { type: String, required: true },
     eyebrow: { type: String, required: true },
@@ -14,6 +16,30 @@ function cardBlurb(item) {
     if (props.showFlags || !item.role) return item.blurb
     return `${item.role} — ${item.blurb.charAt(0).toLowerCase()}${item.blurb.slice(1)}`
 }
+
+const activeTrailer = ref(null)
+
+function openTrailer(item) {
+    activeTrailer.value = item.trailer
+}
+
+function closeTrailer() {
+    activeTrailer.value = null
+}
+
+function trailerEmbedUrl(trailer) {
+    if (trailer.type === 'youtube') {
+        return `https://www.youtube.com/embed/${trailer.id}`
+    }
+    return `https://customer-2s0iguela6o3s2ru.cloudflarestream.com/${trailer.id}/iframe`
+}
+
+function onKeydown(e) {
+    if (e.key === 'Escape') closeTrailer()
+}
+
+onMounted(() => window.addEventListener('keydown', onKeydown))
+onBeforeUnmount(() => window.removeEventListener('keydown', onKeydown))
 </script>
 
 <template>
@@ -43,6 +69,18 @@ function cardBlurb(item) {
                             loading="lazy"
                         />
                         <span v-if="showFlags && item.role" class="flag">{{ item.role }}</span>
+                        <div class="poster-overlay">
+                            <button
+                                v-if="item.trailer"
+                                type="button"
+                                class="trailer-play"
+                                aria-label="Watch trailer"
+                                @click.stop.prevent="openTrailer(item)"
+                            >
+                                ▶
+                            </button>
+                            <span class="imdb-cta">View on IMDb ↗</span>
+                        </div>
                     </div>
                     <div class="film-meta">
                         <span class="role">{{ roleLabel }}</span>
@@ -56,6 +94,29 @@ function cardBlurb(item) {
             </div>
         </div>
     </section>
+
+    <Teleport to="body">
+        <div v-if="activeTrailer" class="trailer-overlay" @click.self="closeTrailer">
+            <div class="trailer-modal">
+                <button
+                    type="button"
+                    class="trailer-close"
+                    aria-label="Close trailer"
+                    @click="closeTrailer"
+                >
+                    ✕
+                </button>
+                <div class="trailer-embed">
+                    <iframe
+                        :src="trailerEmbedUrl(activeTrailer)"
+                        title="Trailer"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowfullscreen
+                    ></iframe>
+                </div>
+            </div>
+        </div>
+    </Teleport>
 </template>
 
 <style scoped>
@@ -200,6 +261,81 @@ function cardBlurb(item) {
     color: #fff;
 }
 
+.poster-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: var(--sp-3);
+    background: linear-gradient(
+        to top,
+        color-mix(in srgb, black 65%, transparent) 0%,
+        transparent 55%
+    );
+    opacity: 0;
+    transition: opacity 0.15s ease;
+}
+
+.film-card:hover .poster-overlay,
+.film-card:focus-within .poster-overlay {
+    opacity: 1;
+}
+
+@media (hover: none) {
+    .poster-overlay {
+        opacity: 1;
+    }
+}
+
+.trailer-play {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 3.2rem;
+    height: 3.2rem;
+    border: none;
+    border-radius: 50%;
+    background: color-mix(in srgb, white 92%, transparent);
+    color: var(--ink);
+    font-size: 1rem;
+    cursor: pointer;
+    transform: scale(0.9);
+    transition:
+        transform 0.15s ease,
+        background 0.15s ease;
+}
+
+.film-card:hover .trailer-play,
+.film-card:focus-within .trailer-play {
+    transform: scale(1);
+}
+
+@media (hover: none) {
+    .trailer-play {
+        transform: scale(1);
+    }
+}
+
+.trailer-play:hover {
+    background: #fff;
+    transform: scale(1.08);
+}
+
+.imdb-cta {
+    position: absolute;
+    bottom: var(--sp-3);
+    left: 0;
+    right: 0;
+    text-align: center;
+    font-family: var(--font-mono);
+    font-size: 0.88rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #fff;
+}
+
 .film-meta p {
     color: var(--ink-muted);
     font-size: 0.88rem;
@@ -220,5 +356,50 @@ function cardBlurb(item) {
 
 .cert b {
     color: var(--accent-3);
+}
+
+.trailer-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--sp-5);
+    background: color-mix(in srgb, black 80%, transparent);
+}
+
+.trailer-modal {
+    position: relative;
+    width: min(960px, 100%);
+}
+
+.trailer-close {
+    position: absolute;
+    top: -2.4rem;
+    right: 0;
+    border: none;
+    background: transparent;
+    color: #fff;
+    font-size: 1.2rem;
+    line-height: 1;
+    cursor: pointer;
+    padding: var(--sp-2);
+}
+
+.trailer-embed {
+    position: relative;
+    padding-top: 56.25%;
+    background: #000;
+    box-shadow: 0 28px 60px -20px color-mix(in srgb, black 70%, transparent);
+}
+
+.trailer-embed iframe {
+    border: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
 }
 </style>

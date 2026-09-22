@@ -36,6 +36,7 @@ const films = [
         blurb: 'Award-winning feature directorial debut - a dark comedy about how quick we are to judge others, and how wrong we can be…',
         image: 'https://imagedelivery.net/3fTi4yOM-Nphm2pJb0KVPg/c2205934-81d1-4cee-d0e9-81df63dc0200/public',
         imdb: 'https://www.imdb.com/title/tt0401385/',
+        trailer: { type: 'cloudflare', id: '94bc2ad1379007045f7817fe0ae18f00' },
     },
     {
         title: 'Leaving Barstow',
@@ -49,6 +50,7 @@ const films = [
         cert: '100%',
         image: 'https://imagedelivery.net/3fTi4yOM-Nphm2pJb0KVPg/c92d67e2-d74e-4774-417e-5e80ee295200/public',
         imdb: 'https://www.imdb.com/title/tt11324534/',
+        trailer: { type: 'youtube', id: 'EUPj3KLcFhE' },
     },
 ]
 </script>
